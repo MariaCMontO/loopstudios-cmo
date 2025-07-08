@@ -1,0 +1,55 @@
+@use 'variables';
+@use 'mixins' as *;
+
+.about {
+  @include flexColumn(5rem);
+  margin-top: clamp(12rem, 20vw, 16rem);
+  margin-inline: 3rem;
+  @include media() {
+    margin-inline: 16rem;
+    position: relative;
+  }
+
+  &__image {
+    width: 100%;
+    @include media {
+      width: 73.3rem;
+    }
+  }
+
+  &__content {
+    @include flexColumn(2.7rem);
+    padding-inline: 3rem;
+    @include media() {
+      background-color: white;
+      padding-block: 9rem;
+      padding-inline-start: 8rem;
+      padding-inline-end: 8rem;
+      position: absolute;
+      left: 50%;
+      top: 35%;
+      width: 60rem;
+    }
+  }
+
+  &__title {
+    @include titles;
+    font-size: clamp(4rem, 5vw, 4.5rem);
+    @include media() {
+      text-align: left;
+    }
+  }
+
+  &__description {
+    font-family: variables.$fuente-principal;
+    color: gray;
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 3.1rem;
+    @include media() {
+      text-align: left;
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+    }
+  }
+}
